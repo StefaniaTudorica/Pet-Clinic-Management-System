@@ -1,6 +1,10 @@
 package com.sda.stefania.petclinic.utils;
 
 
+import com.sda.stefania.petclinic.model.Client;
+import com.sda.stefania.petclinic.model.Consult;
+import com.sda.stefania.petclinic.model.Pet;
+import com.sda.stefania.petclinic.model.Veterinarian;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -13,7 +17,7 @@ public class SessionManager extends AbstractSessionManager {
     }
 
     public static SessionFactory getSessionFactory() {
-        return INSTANCE.getSessionFactory("test_hibernate");
+        return INSTANCE.getSessionFactory("pet_clinic");
     }
 
     public static void shutdown() {
@@ -23,6 +27,9 @@ public class SessionManager extends AbstractSessionManager {
 
     @Override
     protected void setAnnotatedClasses(Configuration configuration) {
-        //add model classes here
+        configuration.addAnnotatedClass(Veterinarian.class);
+        configuration.addAnnotatedClass(Client.class);
+        configuration.addAnnotatedClass(Pet.class);
+        configuration.addAnnotatedClass(Consult.class);
     }
 }
