@@ -1,0 +1,39 @@
+
+PCMS-1
+As a user of the system I should be able to add a new veterinarian. I should be able to specify: firstname, lastname, address, speciality.
+
+PCMS-2
+As a user, I should be able to view all the vets. I should be able to see for each vet: id, firstname, lastname, adress, speciality.
+
+PCMS-3
+As a user, I should be able to delete an existing vet by id.
+
+PCMS-4
+As a user, I should be able to update an existing vet by id. I should be able to update: firstname, lastname, adress, speciality.
+
+PCMS-5
+As a user, I should be able to add a new pet. I should be able to specify: race, birthdate, isVaccinated, ownerName.
+
+PCMS-6
+As a user, I should be able to view all the pets. I should be able to see for each pet: id, race, birthdate, isVaccinated, ownerName.
+
+PCMS-7
+As a user, I should be able to delete an existing pet by id.
+
+PCMS-8
+As a user, I should be able to update an existing pet by id. I should be able to update: race, birthdate, isVaccinated, ownerName.
+
+PCMS-9
+As a user, I should be able to add a new consult. I should be able to specify: veterinarian_id, pet_id, date, description.
+
+PCMS-10
+As a user, I should be able to view all the consults. I should be able to see for each consult: id, veterinarian_id, pet_id, date, description.
+
+PCMS-11
+As a user, I should be able to update the description of a consult.
+
+PCMS-12
+Define hibernate database mode.
+
+PCMS-13
+Create base repository classes.
