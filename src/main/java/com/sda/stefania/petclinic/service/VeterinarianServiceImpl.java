@@ -49,4 +49,9 @@ public class VeterinarianServiceImpl implements VeterinarianService {
                 )
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void deleteById(Long id) {
+        veterinarianRepository.deleteById(id);
+    }
 }

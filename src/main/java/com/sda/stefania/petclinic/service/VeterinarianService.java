@@ -10,4 +10,6 @@ public interface VeterinarianService {
     void create(String firstName, String lastName, String address, String speciality) throws InvalidParameterException;
 
     List<VeterinarianDto> findAll ();
+
+    void deleteById(Long id);
 }
