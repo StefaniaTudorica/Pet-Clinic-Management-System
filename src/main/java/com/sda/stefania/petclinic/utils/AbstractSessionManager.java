@@ -18,9 +18,11 @@ public abstract class AbstractSessionManager {
     private static final String DATABASE_PASSWORD = "root";
 
 
-    private static final String DATABASE_SHOW_SQL = "true";
+    private static final String DATABASE_SHOW_SQL = "false";
 
-    //private static final String DATABASE_HBM2DDL_AUTO = "create-drop";
+    //    cand avem o aplicatie stabila comentam asta
+//    private static final String DATABASE_HBM2DDL_AUTO = "create-drop";
+//    decomentam asta
     private static final String DATABASE_HBM2DDL_AUTO = "update";
 
     private SessionFactory sessionFactory;
