@@ -2,8 +2,10 @@ package com.sda.stefania.petclinic.controller;
 
 import com.sda.stefania.petclinic.service.VeterinarianService;
 import com.sda.stefania.petclinic.service.VeterinarianServiceImpl;
+import com.sda.stefania.petclinic.service.dto.VeterinarianDto;
 import com.sda.stefania.petclinic.service.exception.InvalidParameterException;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class VeterinarianController {
@@ -31,10 +33,28 @@ public class VeterinarianController {
             System.out.println("The veterinarian " + firstName + " was created.");
         } catch (InvalidParameterException e) {
             System.out.println(e.getMessage());
-        }catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("The veterinarian was not created, internal server error.");
         }
     }
 
+    public void showAllVeterinarians() {
+        List<VeterinarianDto> veterinarians = veterinarianService.findAll();
+        if (veterinarians.isEmpty()){
+            System.out.println("No veterinarians");
+            return;
+        }
+        veterinarians.stream()
+                .forEach(veterinarianDto ->
+                        System.out.println(
+                                "\nID: " + veterinarianDto.getId()
+                                        + "\n First Name: " + veterinarianDto.getFirstName()
+                                        + "\n Last Name: " + veterinarianDto.getLastName()
+                                        + "\n Address: " + veterinarianDto.getAddress()
+                                        + "\n Speciality: " + veterinarianDto.getSpeciality()
+
+                        )
+                );
+    }
 
 }
