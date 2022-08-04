@@ -1,41 +1,24 @@
-package com.sda.stefania.petclinic.model;
+package com.sda.stefania.petclinic.service.dto;
 
-import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
-@Entity
-@Table(name = "pet")
-public class Pet {
+public class PetDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-
-    @Column(name = "race")
     private String race;
-
-    @Column(name = "birth_date")
     private Date birthDate;
-
-    @Column(name = "is_vaccinated")
     private Boolean isVaccinated;
+    private String ownerName;
 
-    @ManyToOne
-    @JoinColumn(name = "owner_id")
-    private Client owner;
-
-    @OneToMany(mappedBy = "pet")
-    private List<Consult> consults;
-
-    public Pet() {
+    public PetDTO() {
     }
 
-    public Pet(String race, Date birthDate, Boolean isVaccinated) {
+    public PetDTO(Long id, String race, Date birthDate, Boolean isVaccinated, String ownerName) {
+        this.id = id;
         this.race = race;
         this.birthDate = birthDate;
         this.isVaccinated = isVaccinated;
+        this.ownerName = ownerName;
     }
 
     public Long getId() {
@@ -70,25 +53,17 @@ public class Pet {
         isVaccinated = vaccinated;
     }
 
-    public Client getOwner() {
-        return owner;
+    public String getOwnerName() {
+        return ownerName;
     }
 
-    public void setOwner(Client owner) {
-        this.owner = owner;
-    }
-
-    public List<Consult> getConsults() {
-        return consults;
-    }
-
-    public void setConsults(List<Consult> consults) {
-        this.consults = consults;
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
     @Override
     public String toString() {
-        return "Pet{" +
+        return "PetDTO{" +
                 "id=" + id +
                 ", race='" + race + '\'' +
                 ", birthDate=" + birthDate +

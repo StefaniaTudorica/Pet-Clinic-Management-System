@@ -79,4 +79,6 @@ public class VeterinarianServiceImpl implements VeterinarianService {
             veterinarianRepository.update(veterinarian.get());
         }
     }
+    public List<Veterinarian> findByMultipleParameters(String firstName, String lastName, String address, String speciality)
+    return veterinari
 }

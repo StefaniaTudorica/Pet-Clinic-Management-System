@@ -1,7 +1,7 @@
 package com.sda.stefania.petclinic;
 
-import com.sda.stefania.petclinic.controller.PetController;
-import com.sda.stefania.petclinic.controller.VeterinarianController;
+import com.sda.stefania.petclinic.model.controller.PetController;
+import com.sda.stefania.petclinic.model.controller.VeterinarianController;
 import com.sda.stefania.petclinic.option.UserOption;
 import com.sda.stefania.petclinic.utils.SessionManager;
 
@@ -45,6 +45,8 @@ public class Main {
                 case ADD_NEW_PET:
                     petController.addPet();
                     break;
+                case VIEW_ALL_VACCINATED:
+                    petController.showAllVaccinated();
                 case EXIT:
                     System.out.println("Goodbye!");
                     break;

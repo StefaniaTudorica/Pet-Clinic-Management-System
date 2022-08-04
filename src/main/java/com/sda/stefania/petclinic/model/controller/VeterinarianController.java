@@ -1,4 +1,4 @@
-package com.sda.stefania.petclinic.controller;
+package com.sda.stefania.petclinic.model.controller;
 
 import com.sda.stefania.petclinic.service.VeterinarianService;
 import com.sda.stefania.petclinic.service.VeterinarianServiceImpl;
